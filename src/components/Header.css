@@ -1,0 +1,14 @@
+.header .upper-header {
+  display: flex;
+  align-items: baseline;
+
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  font-size: 2rem;
+  padding-inline: 1rem;
+}
+
+.header .lower-header {
+  padding: 1rem;
+  padding-top: 2rem;
+}
