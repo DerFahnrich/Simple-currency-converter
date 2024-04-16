@@ -1,0 +1,12 @@
+.converter-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 1fr;
+}
+
+.converter-wrapper {
+  align-items: center;
+}
+
+.converter-wrapper .arrow {
+  justify-self: center;
+}

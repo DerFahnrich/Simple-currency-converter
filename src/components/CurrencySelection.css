@@ -1,0 +1,10 @@
+.select-currencies-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 1fr;
+
+  margin-bottom: 2rem;
+}
+
+.select-currencies-wrapper .to-currency {
+  grid-column: 3/4;
+}

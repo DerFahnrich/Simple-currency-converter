@@ -1,36 +1,28 @@
 import { ReactElement, useEffect } from "react";
-import { BaseCurrency, Header } from ".";
 import { Container } from "@mui/material";
-import { useFetch } from "../hooks/useFetch";
-import { ILatest, IRateNames } from "../interfaces";
-import { useAppDispatch } from "../hooks/useAppDispatch";
-import { setRateNames } from "../store/converterSlice";
+import { Header, CurrencySelection, CurrencyConversion } from ".";
+import { ILatest, ICurrencies } from "../interfaces";
+import { setCurrentRates, setCurrencies } from "../store/converterSlice";
+import { useAppDispatch, useFetch } from "../hooks";
 
 export function App(): ReactElement {
   const dispatch = useAppDispatch();
-
   const [_, { data: latest }] = useFetch<ILatest>("/latest.json", { immediate: true });
-
-  const [__, { data: rateNames }] = useFetch<IRateNames>("/currencies.json", {
+  const [__, { data: rateNames }] = useFetch<ICurrencies>("/currencies.json", {
     immediate: true,
   });
 
   useEffect(() => {
-    if (rateNames) {
-      dispatch(setRateNames(rateNames));
-    }
-  }, [rateNames]);
-
-  useEffect(() => {
-    if (latest) {
-      console.log(latest);
-    }
-  }, [latest]);
+    if (latest) dispatch(setCurrentRates(latest.rates));
+    if (rateNames) dispatch(setCurrencies(rateNames));
+  }, [latest, rateNames]);
 
   return (
     <Container>
       <Header />
-      <BaseCurrency />
+      {/* <BaseCurrency /> */}
+      <CurrencySelection />
+      <CurrencyConversion />
     </Container>
   );
 }

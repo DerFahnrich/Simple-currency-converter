@@ -1,0 +1,11 @@
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.currency img {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+}

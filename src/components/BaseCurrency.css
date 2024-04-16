@@ -6,15 +6,3 @@
 
   padding-block: 2rem;
 }
-
-.base-currency figure {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.base-currency figure img {
-  border-radius: 50%;
-  height: 2rem;
-  width: 2rem;
-}
