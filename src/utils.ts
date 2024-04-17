@@ -10,12 +10,12 @@ const chosenCurrencies: ICurrencies = {
   USD: "United States Dollar",
 };
 
-export function convertCurrenciesToOptionsArray(currencies: ICurrencies): ICurrency[] {
+export function convertCurrenciesToCurrencyArray(currencies: ICurrencies): ICurrency[] {
   const nonRedundantCurrencies = removeRedundantCurrencies(currencies);
   const currenciesArray: ICurrency[] = [];
 
   for (const key in nonRedundantCurrencies) {
-    currenciesArray.push({ iso: key, text: currencies[key] });
+    currenciesArray.push({ iso: key, value: currencies[key] });
   }
 
   return currenciesArray;

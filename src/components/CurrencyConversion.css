@@ -1,6 +1,8 @@
 .converter-wrapper {
   display: grid;
   grid-template-columns: 1fr 0.2fr 1fr;
+
+  margin-bottom: 2rem;
 }
 
 .converter-wrapper {

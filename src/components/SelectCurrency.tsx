@@ -2,7 +2,7 @@ import { Autocomplete, TextField } from "@mui/material";
 import { HTMLAttributes, ReactElement } from "react";
 import { useAppSelector } from "../hooks/useAppSelector";
 import { selectCurrencies } from "../store/converterSlice";
-import { convertCurrenciesToOptionsArray } from "../utils";
+import { convertCurrenciesToCurrencyArray } from "../utils";
 import { ICurrency } from "../interfaces";
 import { Currency } from ".";
 
@@ -15,15 +15,15 @@ interface ISelectCurrencyProps {
 
 export function SelectCurrency(props: ISelectCurrencyProps): ReactElement {
   const currencies = useAppSelector(selectCurrencies);
-  const filteredCurrencies = currencies ? convertCurrenciesToOptionsArray(currencies) : currencies;
+  const filteredCurrencies = currencies ? convertCurrenciesToCurrencyArray(currencies) : undefined;
 
   if (!filteredCurrencies) {
-    return <div>Loading..</div>;
+    return <TextField className={props.className} disabled placeholder="Loading.." />;
   }
 
   const isOptionEqualToValue = (option: ICurrency, value: ICurrency) => {
     const isoIsEqual = option.iso === value.iso;
-    const textIsEqual = option.text === value.text;
+    const textIsEqual = option.value === value.value;
     return isoIsEqual && textIsEqual;
   };
 
@@ -36,7 +36,7 @@ export function SelectCurrency(props: ISelectCurrencyProps): ReactElement {
   return (
     <Autocomplete<ICurrency, false, false, false>
       className={props.className}
-      getOptionLabel={(option) => option.text}
+      getOptionLabel={(option) => option.value as string}
       isOptionEqualToValue={isOptionEqualToValue}
       onChange={(_, newValue) => props.setCurrency(newValue)}
       options={filteredCurrencies}

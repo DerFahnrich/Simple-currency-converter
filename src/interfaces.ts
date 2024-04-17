@@ -1,24 +1,24 @@
 export interface IConverterSliceState {
-
-  currentRates?: IRates;
+  currentRates?: ICurrencies;
   currencies?: ICurrencies;
   fromCurrency: ICurrency | null;
+  latest?: ILatest;
   toCurrency: ICurrency | null;
 }
 
 export interface ICurrencies extends IIndexable {
-  CNY: string;
-  DKK: string;
-  EUR: string;
-  GBP: string;
-  NOK: string;
-  SEK: string;
-  USD: string;
+  CNY: string | number;
+  DKK: string | number;
+  EUR: string | number;
+  GBP: string | number;
+  NOK: string | number;
+  SEK: string | number;
+  USD: string | number;
 }
 
 export type ICurrency = {
   iso: string;
-  text: string;
+  value: string | number;
 };
 
 export interface IFlags extends IIndexable {
@@ -37,16 +37,16 @@ interface IIndexable {
 
 export interface ILatest {
   base: string;
-  rates: IRates;
+  rates: ICurrencies;
   timestamp: number;
 }
 
-export interface IRates extends IIndexable {
-  CNY: number;
-  DKK: number;
-  EUR: number;
-  GBP: number;
-  NOK: number;
-  SEK: number;
-  USD: number;
-}
+// export interface IRates extends IIndexable {
+//   CNY: number;
+//   DKK: number;
+//   EUR: number;
+//   GBP: number;
+//   NOK: number;
+//   SEK: number;
+//   USD: number;
+// }

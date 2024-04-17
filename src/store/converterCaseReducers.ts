@@ -1,12 +1,5 @@
 import { PayloadAction } from "@reduxjs/toolkit";
-import { IConverterSliceState, ICurrencies, ICurrency, IRates } from "../interfaces";
-
-export const setCurrentRatesCaseReducer = (
-  state: IConverterSliceState,
-  action: PayloadAction<IRates>
-) => {
-  state.currentRates = action.payload;
-};
+import { IConverterSliceState, ICurrencies, ICurrency, ILatest } from "../interfaces";
 
 export const setCurrenciesCaseReducer = (
   state: IConverterSliceState,
@@ -20,6 +13,14 @@ export const setFromCurrencyCaseReducer = (
   action: PayloadAction<ICurrency | null>
 ) => {
   state.fromCurrency = action.payload;
+};
+
+export const setLatestCaseReducer = (
+  state: IConverterSliceState,
+  action: PayloadAction<ILatest>
+) => {
+  state.latest = action.payload;
+  state.currentRates = action.payload.rates;
 };
 
 export const setToCurrencyCaseReducer = (

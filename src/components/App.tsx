@@ -1,8 +1,8 @@
 import { ReactElement, useEffect } from "react";
 import { Container } from "@mui/material";
-import { Header, CurrencySelection, CurrencyConversion } from ".";
+import { Header, CurrencySelection, CurrencyConversion, CurrentExchangeRates } from ".";
 import { ILatest, ICurrencies } from "../interfaces";
-import { setCurrentRates, setCurrencies } from "../store/converterSlice";
+import { setCurrencies, setLatest } from "../store/converterSlice";
 import { useAppDispatch, useFetch } from "../hooks";
 
 export function App(): ReactElement {
@@ -13,7 +13,7 @@ export function App(): ReactElement {
   });
 
   useEffect(() => {
-    if (latest) dispatch(setCurrentRates(latest.rates));
+    if (latest) dispatch(setLatest(latest));
     if (rateNames) dispatch(setCurrencies(rateNames));
   }, [latest, rateNames]);
 
@@ -23,6 +23,7 @@ export function App(): ReactElement {
       {/* <BaseCurrency /> */}
       <CurrencySelection />
       <CurrencyConversion />
+      <CurrentExchangeRates />
     </Container>
   );
 }

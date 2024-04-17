@@ -4,6 +4,8 @@ export * from "./ConvertInput";
 export * from "./Currency";
 export * from "./CurrencyConversion";
 export * from "./CurrencySelection";
+export * from "./CurrentExchangeRate";
+export * from "./CurrentExchangeRates";
 export * from "./EndAdornment";
 export * from "./Header";
 export * from "./SelectCurrency";

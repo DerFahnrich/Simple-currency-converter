@@ -11,6 +11,7 @@ interface ICurrencyProps {
 
 export function Currency({ currency }: ICurrencyProps): ReactElement {
   const currencies = useAppSelector(selectCurrencies);
+
   return (
     <figure className="currency">
       <img alt={currency.iso} src={flags[currency.iso]} />
