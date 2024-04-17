@@ -19,7 +19,6 @@ const converterSlice = createSlice({
   initialState,
   reducers: {
     setCurrencies: setCurrenciesCaseReducer,
-    // setCurrentRates: setCurrentRatesCaseReducer,
     setFromCurrency: setFromCurrencyCaseReducer,
     setLatest: setLatestCaseReducer,
     setToCurrency: setToCurrencyCaseReducer,

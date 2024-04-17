@@ -13,8 +13,8 @@ export function BaseCurrency(): ReactElement {
 
   return (
     <div className="base-currency">
-      <h4>From currency:</h4>
-      <Currency currency={fromCurrency} />
+      <h4>Base currency:</h4>
+      <Currency currency={{ iso: "USD", value: "United States Dollar" }} />
     </div>
   );
 }

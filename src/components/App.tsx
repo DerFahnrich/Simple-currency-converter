@@ -1,6 +1,12 @@
 import { ReactElement, useEffect } from "react";
 import { Container } from "@mui/material";
-import { Header, CurrencySelection, CurrencyConversion, CurrentExchangeRates } from ".";
+import {
+  Header,
+  CurrencySelection,
+  CurrencyConversion,
+  CurrentExchangeRates,
+  BaseCurrency,
+} from ".";
 import { ILatest, ICurrencies } from "../interfaces";
 import { setCurrencies, setLatest } from "../store/converterSlice";
 import { useAppDispatch, useFetch } from "../hooks";
@@ -20,7 +26,7 @@ export function App(): ReactElement {
   return (
     <Container>
       <Header />
-      {/* <BaseCurrency /> */}
+      <BaseCurrency />
       <CurrencySelection />
       <CurrencyConversion />
       <CurrentExchangeRates />

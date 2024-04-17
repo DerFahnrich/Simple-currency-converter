@@ -21,7 +21,7 @@ export function CurrentExchangeRates(): ReactElement {
   return (
     <div className="current-exchange-rates">
       <div className="exchange-info">
-        <p className="description">Current exchange rates of popular currencies</p>
+        <p className="description">Current exchange rates of popular currencies relative to USD</p>
         <p>Data from Open Exchange Rates API {timestamp}</p>
       </div>
       {currentRatesArray.map((currencyRate) => (

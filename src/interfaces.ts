@@ -1,9 +1,9 @@
 export interface IConverterSliceState {
   currentRates?: ICurrencies;
   currencies?: ICurrencies;
-  fromCurrency: ICurrency | null;
+  fromCurrency: ICurrency;
   latest?: ILatest;
-  toCurrency: ICurrency | null;
+  toCurrency: ICurrency;
 }
 
 export interface ICurrencies extends IIndexable {
@@ -40,13 +40,3 @@ export interface ILatest {
   rates: ICurrencies;
   timestamp: number;
 }
-
-// export interface IRates extends IIndexable {
-//   CNY: number;
-//   DKK: number;
-//   EUR: number;
-//   GBP: number;
-//   NOK: number;
-//   SEK: number;
-//   USD: number;
-// }
