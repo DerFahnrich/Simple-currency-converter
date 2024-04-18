@@ -11,8 +11,14 @@ It's very easy, just follow the steps below.
 3. Type `npm install`
 4. Type `npm run dev`
 
-And it should work! :) 
+And it should work! :)
 
 ### Check it out on vercel
 
 Go to this [Vercel URL](https://simple-currency-converter-ten.vercel.app/) and check it out.
+
+<hr>
+<figure style="text-align:center">
+<img src="./src/assets/screenshot.png">
+<figcaption>Screenshot of the application</figcaption>
+</figure>
