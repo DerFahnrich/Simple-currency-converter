@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+# A simple currency converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application allows you to convert a selection of currencies to another currency. It's built with React Typescript on the vite.js development environment.
 
-Currently, two official plugins are available:
+### Fire it up locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It's very easy, just follow the steps below.
 
-## Expanding the ESLint configuration
+1. Clone the repository
+2. Navigate to the folder in a terminal
+3. Type `npm install`
+4. Type `npm run dev`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+And it should work! :) 
 
-- Configure the top-level `parserOptions` property like this:
+### Check it out on vercel
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Go to this [Vercel URL](https://simple-currency-converter-ten.vercel.app/) and check it out.

@@ -10,7 +10,7 @@ export const setCurrenciesCaseReducer = (
 
 export const setFromCurrencyCaseReducer = (
   state: IConverterSliceState,
-  action: PayloadAction<ICurrency | null>
+  action: PayloadAction<ICurrency>
 ) => {
   state.fromCurrency = action.payload;
 };
@@ -25,7 +25,7 @@ export const setLatestCaseReducer = (
 
 export const setToCurrencyCaseReducer = (
   state: IConverterSliceState,
-  action: PayloadAction<ICurrency | null>
+  action: PayloadAction<ICurrency>
 ) => {
   state.toCurrency = action.payload;
 };

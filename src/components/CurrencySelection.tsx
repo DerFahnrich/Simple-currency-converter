@@ -16,11 +16,11 @@ export function CurrencySelection(): ReactElement {
   const fromCurrency = useAppSelector(selectFromCurrency);
   const toCurrency = useAppSelector(selectToCurrency);
 
-  const handleFromCurrencyUpdate = (newCurrency: ICurrency | null) => {
+  const handleFromCurrencyUpdate = (newCurrency: ICurrency) => {
     dispatch(setFromCurrency(newCurrency));
   };
 
-  const handleToCurrencyUpdate = (newCurrency: ICurrency | null) => {
+  const handleToCurrencyUpdate = (newCurrency: ICurrency) => {
     dispatch(setToCurrency(newCurrency));
   };
 

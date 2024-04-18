@@ -1,10 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import {
-  selectCurrencies,
-  selectCurrentRates,
-  selectFromCurrency,
-  selectToCurrency,
-} from "../store/converterSlice";
+import { selectCurrentRates, selectFromCurrency, selectToCurrency } from "../store/converterSlice";
 import { useAppSelector } from "./useAppSelector";
 
 interface IUseConvertReturnType {

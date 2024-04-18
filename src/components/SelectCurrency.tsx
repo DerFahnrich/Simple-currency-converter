@@ -7,10 +7,10 @@ import { ICurrency } from "../interfaces";
 import { Currency } from ".";
 
 interface ISelectCurrencyProps {
-  currency: ICurrency | null;
+  currency: ICurrency;
   className?: string;
   label: string;
-  setCurrency: (newValue: ICurrency | null) => void;
+  setCurrency: (newValue: ICurrency) => void;
 }
 
 export function SelectCurrency(props: ISelectCurrencyProps): ReactElement {
@@ -38,7 +38,7 @@ export function SelectCurrency(props: ISelectCurrencyProps): ReactElement {
       className={props.className}
       getOptionLabel={(option) => option.value as string}
       isOptionEqualToValue={isOptionEqualToValue}
-      onChange={(_, newValue) => props.setCurrency(newValue)}
+      onChange={(_, newValue) => props.setCurrency(newValue!)}
       options={filteredCurrencies}
       renderInput={(params) => <TextField {...params} label={props.label} />}
       renderOption={renderOption}
