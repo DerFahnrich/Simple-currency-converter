@@ -3,6 +3,7 @@
   align-items: baseline;
 
   background-color: var(--primary-color);
+  background-color: fuchsia;
   border-radius: 1rem;
   font-size: 2rem;
   padding-inline: 1rem;
